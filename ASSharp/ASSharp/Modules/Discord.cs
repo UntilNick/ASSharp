@@ -14,6 +14,9 @@ namespace ASSharp.Modules
         private static string discord_modules_Path = $"{GetDiscordDirectory()}{GetDiscordVersion()}/modules/discord_modules/index.js";
         private static string discord_desktop_core_Path = $"{GetDiscordDirectory()}{GetDiscordVersion()}/modules/discord_desktop_core/index.js";
 
+        /// <summary>
+        /// Checks For Integrity of Discord's Files 
+        /// </summary>
         internal static void CheckFileIntegrity()
         {
             string[] discord_modules;
@@ -49,6 +52,10 @@ namespace ASSharp.Modules
             }
         }
 
+        /// <summary>
+        /// Restore Original Files
+        /// </summary>
+        /// <param name="DFile">File Type</param>
         internal static void RestoreOriginal(DiscordFile DFile)
         {
             switch (DFile)
@@ -82,12 +89,19 @@ namespace ASSharp.Modules
             }
         }
 
+        /// <summary>
+        /// File Type enums
+        /// </summary>
         internal enum DiscordFile
         {
             discord_modules = 1,
             discord_desktop_core
         }
 
+        /// <summary>
+        /// Gets Discord's Directory
+        /// </summary>
+        /// <returns>A String to Directory</returns>
         internal static string GetDiscordDirectory()
         {
             if (Directory.Exists($"C:/Users/{Environment.UserName}/AppData/Roaming/discord"))
@@ -100,6 +114,10 @@ namespace ASSharp.Modules
             }
         }
 
+        /// <summary>
+        /// Gets Discord's Version
+        /// </summary>
+        /// <returns>A String to Discord Version Directory</returns>
         internal static string GetDiscordVersion()
         {
             string DiscordVersion = "";

@@ -9,6 +9,11 @@ namespace ASSharp.Modules
 {
     class LogService
     {
+        /// <summary>
+        /// Logs String with Colour
+        /// </summary>
+        /// <param name="Format"></param>
+        /// <param name="FormatColor"></param>
         internal static void Log(string Format, LogLevel FormatColor = LogLevel.Debug)
         {
             var ConsoleColour = Console.ForegroundColor;
